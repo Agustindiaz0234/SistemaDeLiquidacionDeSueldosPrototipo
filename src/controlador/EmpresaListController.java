@@ -15,7 +15,6 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import modelo.Empresa;
 
 public class EmpresaListController implements Initializable {
@@ -86,18 +85,7 @@ public class EmpresaListController implements Initializable {
         mainController.showAgregarEmpresa();
     }
     
- 
-    
-    private void handleButton(Empresa empresa){
 
-    ListarEmpleadoController.setEmpresa(empresa);
-    
-    System.out.print("Se envio la empresa " + empresa);
-     
-      MainLayoutController mainController  = Main.getMainController();
-      mainController.showEmpleadoList();
-
-    }
 
     @FXML
     private void navegarEliminarEmpresa(ActionEvent event) {
@@ -120,7 +108,7 @@ public class EmpresaListController implements Initializable {
                Alert alert = new Alert(Alert.AlertType.WARNING);
                alert.setTitle("Advertencia");
                alert.setHeaderText(null);
-               alert.setContentText("No se seleccionó ningún empleado");
+               alert.setContentText("No se seleccionó ningún empresa");
         alert.showAndWait();
         }
     }
@@ -145,5 +133,17 @@ public class EmpresaListController implements Initializable {
         
     }
 
+     
+    
+    private void handleButton(Empresa empresa){
+
+    ListarEmpleadoController.setEmpresa(empresa);
+    
+    System.out.print("Se envio la empresa " + empresa);
+     
+      MainLayoutController mainController  = Main.getMainController();
+      mainController.showEmpleadoList();
+
+    }
     
 }

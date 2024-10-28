@@ -15,7 +15,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
     try {
-            // Cargar el layout principal
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/vista/MainLayout.fxml"));
             BorderPane root = loader.load();
@@ -23,7 +22,7 @@ public class Main extends Application {
             
             mainController = loader.getController();
 
-            // Crear la escena y configurar el escenario
+
             Scene scene = new Scene(root, 800, 600);
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UNDECORATED);

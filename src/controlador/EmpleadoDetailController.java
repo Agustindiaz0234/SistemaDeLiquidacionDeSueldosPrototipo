@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package controlador;
 
 import java.net.URL;
@@ -66,40 +63,40 @@ public class EmpleadoDetailController implements Initializable {
     String idStr = txtId.getText();
     String mail = txtMail.getText();
 
-    // Verificar que los campos no estén vacíos o nulos
+    
     if (nombre == null || nombre.trim().isEmpty()) {
         showAlert("El nombre no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     if (apellido == null || apellido.trim().isEmpty()) {
         showAlert("El apellido no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     if (telefonoStr == null || telefonoStr.trim().isEmpty()) {
         showAlert("El teléfono no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return;
     }
 
     if (idStr == null || idStr.trim().isEmpty()) {
         showAlert("El ID no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     if (mail == null || mail.trim().isEmpty()) {
         showAlert("El correo electrónico no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     try {
         int telefono = Integer.parseInt(telefonoStr);
         int id = Integer.parseInt(idStr);
 
-        // Crear el nuevo empleado
+       
         Empleado empleadoNuevo = new Empleado(id, nombre, apellido, telefono, mail, empresa.getId());
 
-        // Lógica de edición o inserción
+       
         if (isEdit) {
             updateEmpleado(empleadoNuevo, empleado);
         } else {

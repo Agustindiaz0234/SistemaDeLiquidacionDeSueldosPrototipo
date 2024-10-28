@@ -59,9 +59,9 @@ public class MainLayoutController implements Initializable {
     private void loadForm(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/"+fxmlFile));
-            VBox form = loader.load(); // Cargar el formulario
-            formContainer.getChildren().clear(); // Limpiar el contenedor
-            formContainer.getChildren().add(form); // Agregar el nuevo formulario
+            VBox form = loader.load(); 
+            formContainer.getChildren().clear(); 
+            formContainer.getChildren().add(form); 
         } catch (Exception e) {
             e.printStackTrace();
         }

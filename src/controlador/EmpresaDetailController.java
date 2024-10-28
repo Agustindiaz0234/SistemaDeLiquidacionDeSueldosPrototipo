@@ -49,35 +49,35 @@ public class EmpresaDetailController implements Initializable {
     String telefonoStr = txtTelefono.getText();
     String idStr = txtId.getText();
 
-    // Verificar que los campos no estén vacíos o nulos
+ 
     if (nombre == null || nombre.trim().isEmpty()) {
         showAlert("El nombre no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
     
     if (direccion == null || direccion.trim().isEmpty()) {
         showAlert("La dirección no puede estar vacía.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     if (telefonoStr == null || telefonoStr.trim().isEmpty()) {
         showAlert("El teléfono no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     if (idStr == null || idStr.trim().isEmpty()) {
         showAlert("El ID no puede estar vacío.");
-        return; // Salir del método si la validación falla
+        return; 
     }
 
     try {
         int telefono = Integer.parseInt(telefonoStr);
         int id = Integer.parseInt(idStr);
 
-        // Crear la nueva empresa
+     
         Empresa empresaNueva = new Empresa(id, nombre, direccion, telefono);
 
-        // Lógica de edición o inserción
+    
         if (isEdit) {
             updateEmpresa(empresaNueva, empresa);
         } else {
@@ -90,7 +90,7 @@ public class EmpresaDetailController implements Initializable {
         showAlert("Ocurrió un error inesperado: " + e.getMessage());
         return;
     }
-   
+        isEdit = false;
         MainLayoutController mainController = Main.getMainController();
         mainController.showEmpresa();
     }

@@ -39,10 +39,14 @@ public class LiquidacionController implements Initializable {
 
     @FXML
     private void calcularSueldo(ActionEvent event) {
-        int horasTrabajadas = Integer.parseInt(txtHorasTrabajadas.getText());
-        int cobroHora = Integer.parseInt(txtCobroHora.getText());
-        
-        lblSueldoBruto.setText("El sueldo bruto del empleado es: " + String.valueOf(cobroHora * horasTrabajadas));
-    }
-    
+        try {
+                int horasTrabajadas = Integer.parseInt(txtHorasTrabajadas.getText());
+                int cobroHora = Integer.parseInt(txtCobroHora.getText());
+                lblSueldoBruto.setText("El sueldo bruto del empleado es: " + String.valueOf(cobroHora * horasTrabajadas));
+            } catch (NumberFormatException e) {
+                lblSueldoBruto.setText("Por favor, ingrese valores numéricos válidos.");
+            }
+
+                }
+
 }
